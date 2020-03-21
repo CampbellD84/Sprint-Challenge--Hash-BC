@@ -48,8 +48,8 @@ def valid_proof(last_hash, proof):
     # If they match, proof valid
 
     check_proof_hash = hashlib.sha256(f'{proof}'.encode()).hexdigest()
-    last_hash_end_check = last_hash[-6:]
     check_proof_hash_beg_check = check_proof_hash[:6]
+    last_hash_end_check = last_hash[-6:]
 
     return check_proof_hash_beg_check == last_hash_end_check
 
